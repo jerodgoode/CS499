@@ -1,0 +1,88 @@
+{
+  "start_room": "Mines of Moria",
+  "win_room": "Dungeon",
+  "items_required": 7,
+  "rooms": {
+    "Mines of Moria": {
+      "description": "Ancient pillars rise from the dark, their carvings worn by centuries. The air tastes of stone and shadow. Tunnels branch in every direction.",
+      "exits": {
+        "west": "West Wing",
+        "east": "East Wing",
+        "north": "North Hall",
+        "south": "South Hall"
+      },
+      "item": {
+        "name": "Seeing Stone",
+        "description": "A palantir that burns with cold inner light, showing glimpses of distant places."
+      }
+    },
+    "West Wing": {
+      "description": "A vaulted chamber, its far wall collapsed. Wind moans through the gap, carrying the faint scent of pine from somewhere far above.",
+      "exits": {
+        "east": "Mines of Moria"
+      },
+      "item": {
+        "name": "Lothlorien Bow",
+        "description": "A slender elven bow carved from mallorn wood, strung with a thread of starlight."
+      }
+    },
+    "North Hall": {
+      "description": "The ceiling arches high overhead, lost in darkness. Dwarf-runes are carved into the threshold stones, their meaning long forgotten.",
+      "exits": {
+        "south": "Mines of Moria",
+        "east": "North Bunker"
+      },
+      "item": {
+        "name": "Staff of Gandalf",
+        "description": "A twisted length of ancient wood, warm to the touch and crackling with dormant power."
+      }
+    },
+    "North Bunker": {
+      "description": "A stout guardroom, its iron door rusted open. Weapon racks line the walls, all stripped bare save for one glinting suit of armour.",
+      "exits": {
+        "west": "North Hall"
+      },
+      "item": {
+        "name": "Mythril Armor",
+        "description": "A coat of rings woven from true silver — lighter than silk, harder than steel."
+      }
+    },
+    "South Hall": {
+      "description": "Water trickles down the far wall into a shallow pool that mirrors the faint glow of bioluminescent lichen.",
+      "exits": {
+        "north": "Mines of Moria",
+        "east": "South Bunker"
+      },
+      "item": {
+        "name": "Light of Galadriel",
+        "description": "A crystal phial filled with the light of Earendil's star, steady and unwavering in the dark."
+      }
+    },
+    "South Bunker": {
+      "description": "A cramped storeroom, its shelves rotted to splinters. Something valuable was left behind in the rush to flee.",
+      "exits": {
+        "west": "South Hall"
+      },
+      "item": {
+        "name": "Helmet of Eowyn",
+        "description": "A winged helm of Rohirric craft, dented from battle but still strong."
+      }
+    },
+    "East Wing": {
+      "description": "Broad steps lead up into a gallery that once oversaw a great forge. The forge is cold now, but heat from the deeper earth still rises underfoot.",
+      "exits": {
+        "west": "Mines of Moria",
+        "north": "Dungeon"
+      },
+      "item": {
+        "name": "Sword of Gondor",
+        "description": "A long blade etched with the seven stars of Gondor, its edge still keen despite the ages."
+      }
+    },
+    "Dungeon": {
+      "description": "The Bridge of Khazad-dum stretches before you. Heat billows from the chasm below. A vast shadow rises — wings spread, whip cracking. THE BALROG AWAITS.",
+      "exits": {},
+      "item": null
+    }
+  }
+}

@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=67"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fellowship-balrog"
+version = "1.0.0"
+requires-python = ">=3.11"
+description = "CS 499 capstone enhancement of a text-adventure game — OOP, algorithms, and SQLite persistence."
+
+[project.scripts]
+fellowship = "fellowship.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+# Ship the non-Python data files so they are found after a `pip install`:
+# the world map JSON and the SQLite schema both load relative to the package.
+[tool.setuptools.package-data]
+fellowship = ["config/*.json", "*.sql"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
