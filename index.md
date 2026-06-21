@@ -38,7 +38,13 @@ Finishing this degree while working full time has been demanding, but it confirm
 
 Before making any enhancements, I recorded a code review of the original artifact. It walks through how the existing code works, analyzes it against a code review checklist, and lays out my plan for each enhancement and how it maps to the program's course outcomes.
 
-**[Watch the code review video](https://youtu.be/JN0WZo90wVw)**
+(<p align="center">
+  <iframe width="560" height="315"
+    src="https://www.youtube.com/embed/JN0WZo90wVw"
+    title="CS 499 Code Review"
+    frameborder="0"
+    allowfullscreen></iframe>
+</p>)
 
 ---
 
