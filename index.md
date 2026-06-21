@@ -1,5 +1,3 @@
-# Jerod Goode
-
 ## Computer Science Capstone - CS 499 - SNHU
 
 Welcome to my professional ePortfolio for the Southern New Hampshire University Computer Science program, completed with a concentration in Information Security. The work below centers on a single artifact, a Python text adventure game called *The Fellowship & The Balrog*, enhanced across the three core areas of computer science: software design and engineering, algorithms and data structures, and databases.
