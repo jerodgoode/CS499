@@ -55,7 +55,7 @@ All three enhancements build on the same project, a text based adventure game I 
 I refactored the original procedural script into a modular, object-oriented Python package. The world, player, game rules, and command-line interface each live in their own module, the game world loads from a JSON config file, and a pytest suite covers the major behaviors. This enhancement also adds input validation, custom exceptions, and pip packaging.
 
 - **[Read the narrative](https://github.com/jerodgoode/CS499/blob/main/Narratives/Enhancement_One_Narrative.md)**
-- **[Pseudocode](https://github.com/jerodgoode/CS499/blob/main/Narratives/Enhancement_One_Narrative.md)**
+- **[Pseudocode](https://github.com/jerodgoode/CS499/blob/main/Pseudocode/Enhancement_One_Pseudocode)**
 
 ---
 
@@ -64,7 +64,7 @@ I refactored the original procedural script into a modular, object-oriented Pyth
 I added the data structures and algorithms that make the game interesting. A hint system uses breadth-first search over the rooms, treated as a graph, to point the player toward the nearest item they still need. A trap-door lockpick puzzle is bounded so that binary search can always solve it, and items are placed each game with a seeded random generator so runs are repeatable but never identical. The test suite grew from fifteen to twenty-four tests to cover the new logic.
 
 - **[Read the narrative](https://github.com/jerodgoode/CS499/blob/main/Narratives/Enhancement_Two_Narrative.md)**
-- **[Pseudocode](https://github.com/jerodgoode/CS499/blob/main/Narratives/Enhancement_One_Narrative.md)**
+- **[Pseudocode](https://github.com/jerodgoode/CS499/blob/main/Pseudocode/Enhancement_Two_Pseudocode)**
 
 ---
 
@@ -73,7 +73,7 @@ I added the data structures and algorithms that make the game interesting. A hin
 I added a SQLite database so games persist between sessions. A saves table holds an in-progress game and a runs table records every finished game, which feeds a stats command for wins, losses, win rate, and average moves. Every value reaching the database goes through a parameterized query to defend against SQL injection, and a dedicated test fires an injection payload to prove the input is stored as harmless text.
 
 - **[Read the narrative](https://github.com/jerodgoode/CS499/blob/main/Narratives/Enhancement_Three_Narrative.md)**
-- **[Pseudocode](https://github.com/jerodgoode/CS499/blob/main/Narratives/Enhancement_One_Narrative.md)**
+- **[Pseudocode](https://github.com/jerodgoode/CS499/blob/main/Pseudocode/Enhancement_Three_Pseudocode)**
 
 ---
 
