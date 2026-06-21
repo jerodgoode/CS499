@@ -1,0 +1,72 @@
+Pseudocode:
+#=======================================================================
+# CATEGORY 3 ENHANCEMENT: DATABASES
+#=======================================================================
+
+#-------------------------------------------------------------------------------------------------------------------
+# NEW MODULES (added to the package from Category 1 and 2)
+#-------------------------------------------------------------------------------------------------------------------
+# fellowship/ 
+#     database.py				# SQLite connection and queries
+#     schema.sql				# table definitions
+#     tests/
+#	test_database.py
+
+#-------------------------------------------------------------------------------------------------------------------
+# DATABASE SCHEMA
+#-------------------------------------------------------------------------------------------------------------------
+
+# CREATE TABLE saves (
+#	id INTEGER PRIMARY KEY, 
+#	player_name TEXT NOT NULL,
+#	current_room TEXT NOT NULL,
+#	seed INTEGER NOT NULL,
+#	inventory TEXT NOT NULL,		# JSON list of item names
+#	visit_counts TEXT NOT NULL,		# JSON dict of room -> count
+#	saved_at TIMESTAMP NOT NULL
+# );
+
+# CREATE TABLE runs (
+#	id INTEGER PRIMARY KEY, 
+#	player_name TEXT NOT NULL,
+#	seed INTEGER NOT NULL,
+#	outcome TEXT NOT NULL,
+#	moves INTEGER NOT NULL,
+#	items_collected INTEGER NOT NULL,
+#	finished_at TIMESTAMP NOT NULL
+# );
+
+#-------------------------------------------------------------------------------------------------------------------
+# FEATURE 1: SAVE AND LOAD
+#-------------------------------------------------------------------------------------------------------------------
+
+FUNCTION save_game(player, game):
+	# gather current state into single record
+	# use a parameterized INSERT to write it to the saves table
+	# return the new save id
+
+FUNCTION load_game(save_id): 
+	# read the saves row by ID
+	# rebuild the player and game state from stored fields
+	# return the restored game
+
+#-------------------------------------------------------------------------------------------------------------------
+# FEATURE 2: RUN HISTORY
+#-------------------------------------------------------------------------------------------------------------------
+
+FUNCTION record_run(player_name, seed, outcome, moves, items_collected):
+	# called when the games ends in a win or loss
+	# parameterized INSERT into the runs table with a timestamp
+
+#-------------------------------------------------------------------------------------------------------------------
+# FEATURE 3: STATS QUERIES
+#-------------------------------------------------------------------------------------------------------------------
+
+FUNCTION get_stats(player_name): 
+	# run a small set of parameterized SELECT queries: 
+		# total wins and losses
+		# win rate
+		# average moves per win
+	#return a dictionary the CLI can format and display
+
+#=======================================================================

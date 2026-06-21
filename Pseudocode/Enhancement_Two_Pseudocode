@@ -1,0 +1,55 @@
+Pseudocode:
+#=======================================================================
+# CATEGORY 2 ENHANCEMENT: ALGORITHMS AND DATA STRUCTURES
+#=======================================================================
+
+#-------------------------------------------------------------------------------------------------------------------
+# NEW MODULES (added to the package from Category 1)
+#-------------------------------------------------------------------------------------------------------------------
+# fellowship/ 
+#     algorithms.py			# BFS pathfinding for hint system
+#     puzzles.py				# trap door and lockpick logic
+#     placement.py			# seeded random item shuffling 
+#     tests/
+#	test_algorithms.py
+#	test_puzzles.py
+#	test_placement.py
+
+#-------------------------------------------------------------------------------------------------------------------
+# FEATURE 1: BFS HINT SYSTEM
+#-------------------------------------------------------------------------------------------------------------------
+
+FUNCTION find_hint(world, current_room, inventory):
+	# find rooms that have items the player needs
+	# run BFS starting from current_room
+	# return the first direction along the shortest path
+	# return message if all items have been gathered
+#-------------------------------------------------------------------------------------------------------------------
+# FEATURE 2: TRAP DOOR WITH BINARY SEARCH LOCKPICK
+#-------------------------------------------------------------------------------------------------------------------
+
+# Track visits from player for each room
+
+FUNCTION on_room_entry(player, current_room):
+	# increment visit counter for this room
+	# trap is triggered on 3rd visit
+
+FUNCTION trigger_trap_door(player)
+	# pick secret number between 1 and 100
+	# player gets 7 attempts to guess secret number
+	# respond “higher” or “lower” after each guess
+	# success: reset the room counter and return to play
+	# failure: drop random inventory item and reset counter
+#-------------------------------------------------------------------------------------------------------------------
+# FEATURE 3: SEEDED RANDOM ITEM PLACEMENT
+#-------------------------------------------------------------------------------------------------------------------
+
+FUNCTION place_items(world, items, seed):
+	# build a list of rooms that can hold items
+	# shuffle them with random number generator
+	# assign each item to the next room in the shuffled list
+
+FUNCTION new_game(world, items):
+	# generate a seed, place items
+
+#=======================================================================

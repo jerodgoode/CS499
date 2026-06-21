@@ -1,0 +1,82 @@
+Pseudocode:
+#=======================================================================
+# CATEGORY 1 ENHANCEMENT: SOFTWARE DESIGN AND ENGINEERING
+#=======================================================================
+
+#-------------------------------------------------------------------------------------------------------------------
+# PROJECT STRUCTURE
+#-------------------------------------------------------------------------------------------------------------------
+
+# fellowship/
+#     __init__.py				# package marker
+#     world.py				# room class and graph representation
+#     player.py				# player class, inv management
+#     game.py				# game Class, main loop, win/loss rules
+#     cli.py				# input parsing, output format
+#	config/
+#                 world.json			# room definitions, items, connections
+#	tests/			
+#	     test_world.py 		# room navigation tests
+#	     test_player.py		# inventory and movement tests
+#	     test_game.py		# win/loss condition tests
+# pyproject.toml			# packaging and dependencies
+# README.md				# installation and how-to guide
+
+#-------------------------------------------------------------------------------------------------------------------
+# CLASS DEFINITIONS
+#-------------------------------------------------------------------------------------------------------------------
+
+# Represents a single location in the game
+CLASS Room:
+	name: string			# displays name of room
+	description: string		# text shown when entered room
+	exits: dict[direction -> Room]	#adjency list for graph
+	item: Item or None		#item in this room, if any
+
+# Represents the player and their state
+CLASS Player:
+	current_room: Room		# where the player is 
+	inventory: list of Item		# items collected by player
+
+	METHOD move(direction): 
+	# if direction exists, update current_room
+	# raise InvalidMoveError if no room/exit in that direction
+
+	METHOD pick_up(item): 
+	# add item to inventory, remove from room
+
+# Game controls
+CLASS Game: 
+	world: dict[str -> Room]		#graph of rooms
+	player: Player
+
+	METHOD load_world(config_path):
+	# loads world.json
+	# validate before exiting room
+
+	METHOD run( ):
+	# main loop handles each turn until the game ends
+	# ends cleanly on win/loss/quit
+
+	METHOD process_command(command):
+	# checks that input is valid, then runs matching action
+	# ignores/rejects anything unrecognized
+
+#-------------------------------------------------------------------------------------------------------------------
+# WORLD CONFIG (config/world.json)
+#-------------------------------------------------------------------------------------------------------------------
+# {
+#	“rooms”: {
+	     “Mines of Moria”: {
+		“description”: “…”,
+	     	“exits”: {“West”: “West Wing”, “East”: “East Wing” },
+	     	“item”: null
+	     },
+	     # Continue for all other rooms
+	},
+	“start_room”: “Mines of Moria”,
+	“win_room”: “Dungeon”,
+	“win_condition”: { “items_required”: 7 }
+}
+#=======================================================================
+ 
